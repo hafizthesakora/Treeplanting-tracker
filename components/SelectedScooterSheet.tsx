@@ -8,7 +8,7 @@ import plantImage from '~/assets/image.png';
 import { Button } from './Button';
 
 export default function SelectedScooterSheet() {
-  const { selectedScooter, duration, distance } = useScooter();
+  const { selectedScooter, duration, distance, isNearby } = useScooter();
 
   const bottomSheetRef = useRef<BottomSheet>(null);
 
@@ -26,7 +26,7 @@ export default function SelectedScooterSheet() {
             <Text style={{ fontSize: 20, fontWeight: '600' }}>
               Seedling - {selectedScooter?.id}
             </Text>
-            <Text>XXX-LM8 | Bakanta </Text>
+            <Text>Eni Ghana LC | Tree Planting </Text>
           </View>
           <View style={{ gap: 5 }}>
             <View
@@ -58,7 +58,7 @@ export default function SelectedScooterSheet() {
 
         {/* BOTTOM PART */}
         <View>
-          <Button title="Start Journey" />
+          <Button title="Follow the map to the Plant" disabled={!isNearby} />
         </View>
       </BottomSheetView>
     </BottomSheet>
